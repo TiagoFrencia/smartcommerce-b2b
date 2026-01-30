@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: smartcommerce-backend
+  profiles:
+    active: dev
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: method

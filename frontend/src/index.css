@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-sans: 'Inter', sans-serif;
+}
+
+@layer base {
+    :root {
+        --tooltip-bg: #ffffff;
+        --tooltip-text: #1f2937;
+    }
+
+    .dark {
+        --tooltip-bg: #1e293b;
+        --tooltip-text: #f3f4f6;
+    }
+}
+
+body {
+    @apply bg-slate-50 dark:bg-slate-900 font-sans transition-colors duration-300;
+}

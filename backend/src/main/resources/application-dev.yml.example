@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5433}/${DB_NAME:smartcommerce}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:password}
+    driver-class-name: org.postgresql.Driver
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    schemas: public
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+
+
+gemini:
+  api:
+    key: "${GEMINI_API_KEY:INSERT_YOUR_API_KEY_HERE}"
+
+app:
+  jwt:
+    secret: "${JWT_SECRET:INSERT_YOUR_JWT_SECRET_HERE_MUST_BE_VERY_LONG}"
+    expiration-ms: 86400000
+
+  admin:
+    email: "${ADMIN_EMAIL:admin@smartcommerce.com}"
+    password: "${ADMIN_PASSWORD:123456}"

@@ -1,0 +1,38 @@
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+
+# Secrets & Config
+.env
+src/main/resources/application.properties
+src/main/resources/application-dev.yml
+*.log
+logs/
+
+# Node Modules
+node_modules/
+
+# Editor & AI Configs
+
+# Antigravity / Cursor / VS Code
+.antigravity/
+.cursor/
+.vscode/
+.cursorrules
+*.code-workspace
+.history/
+
+# Google Project IDX (si aplica)
+.idx/
+
+# Logs y Temporales
+*.log
+npm-debug.log

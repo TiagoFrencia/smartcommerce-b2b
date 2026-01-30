@@ -1,0 +1,33 @@
+# IDEs
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+docker-data/
+
+# Backend (Maven)
+target/
+*.class
+
+# Frontend (Node)
+node_modules/
+dist/
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# General
+.env
+
+# Editor/Tools
+.cursor
+.history
+
+# Secrets
+application.properties

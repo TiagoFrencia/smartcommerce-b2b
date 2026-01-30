@@ -1,0 +1,1 @@
+ALTER TABLE sales_analysis ALTER COLUMN user_id DROP NOT NULL;

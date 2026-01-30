@@ -1,0 +1,17 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: smartcommerce-db
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - "${DB_PORT}:5432"
+    volumes:
+      - ./scripts/init-db:/docker-entrypoint-initdb.d
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
