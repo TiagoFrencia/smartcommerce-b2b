@@ -20,6 +20,22 @@ const LoginPage: React.FC = () => {
         setLoading(true);
         setError(null);
 
+        // MOCK MODE: Bypass backend authentication
+        if (import.meta.env.VITE_USE_MOCK === 'true') {
+            setTimeout(() => {
+                login('mock-jwt-token-123456', {
+                    id: 1,
+                    email: email,
+                    firstName: 'Demo',
+                    lastName: 'User',
+                    roles: ['admin', 'manager']
+                });
+                navigate('/dashboard');
+                setLoading(false);
+            }, 1000);
+            return;
+        }
+
         try {
             const response = await fetch('http://localhost:8080/api/auth/login', {
                 method: 'POST',
